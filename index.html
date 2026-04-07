@@ -456,7 +456,11 @@
 
     // Creating function for setting up filter listeners
     function filterListeners() {
-
+        const inputs = document.querySelectorAll("#filters input[type=checkbox]");
+        let i;
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("change", filterChanger);
+        }
     }
 
     // Creating function for filter changing (Complex)
@@ -486,7 +490,28 @@
 
     // Function for removing only one filter instead of all
     function removeFilterOne(type, value) {
-
+        if (type === "gender") {
+            filterStates.gender = filterStates.gender.filter(function (gen) {
+          return gen !== value;
+        });
+        checkBoxSync("gender", value, false);
+      } else if (type === "category") {
+            filterStates.categories = filterStates.categories.filter(function (cate) {
+          return cate !== value;
+        });
+        checkBoxSync("category", value, false);
+      } else if (type === "size") {
+        filterStates.sizes = filterStates.sizes.filter(function (siz) {
+          return siz !== value;
+        });
+        checkBoxSync("size", value, false);
+      } else if (type === "color") {
+        filterStates.colors = filterStates.colors.filter(function (col) {
+          return col !== value;
+        });
+        checkBoxSync("color", value, false);
+      }
+      createBrowse();
     }
 
     // This function is for clearing all of the filters that are currently active
@@ -509,7 +534,30 @@
 
     // This is an important function to create the Browse page
     function createBrowse() {
+        createActiveTags();
+        const list = getListFiltered();
+        const grid = document.getElementById("productGrid");
+        if (list.length === 0) {
+            grid.innerHTML = '<div>No Products that Match Filters, Try to Change Filters.</div>';
+            return;
+        }
 
+        let html = '<div class="product-grid">';
+        let i;
+        for (i = 0; i < list.length; i++) {
+            const para = list[i];
+
+            // Add HTML here and finish from here
+
+        }
+
+    }
+
+    // Function for escaping HTLM deployment
+    function escape(scape) {
+        const divide = document.createElement("div");
+        divide.textContent = scape;
+        return divide.innerHTML;
     }
 
     // Function to add to cart (Using a small + box)
@@ -551,7 +599,7 @@
         });
     }
 
-    // Function for opening the product via productId (Very Complex)
+    // Function for opening the product via productId
     function openProd(productId) {
 
     }
@@ -624,12 +672,55 @@
 
     // Function for creating the view of the Shopping Cart Tab
     function createShoppingCart(){
+        const empty = shoppingCartLines.length === 0;
+        // Using style just to make it easier, if empty display block then none, if not empty other way around
+        document.getElementById("cartEmptyMessage").style.display = empty ? "block" : "none";
+        document.getElementById("cartInventory").style.display = empty ? "none" : "block";
+
+        // Setting constants
+        const shippingM = document.getElementById("shippingMethod");
+        const shippingD = document.getElementById("shippingDestination");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+
+        shippingM = empty;
+        shippingD = empty;
+        checkoutBtn = empty;
+
+        if (empty) {
+            updateCartBadging();
+            return;
+        }
+
+        const tbody = document.getElementById("cartBody");
+        tbody.innerHTML = "";
+        let i;
+        for (i = 0; i < shoppingCartLines.length; i++) {
+            const lines = shoppingCartLines[i];
+            const subtot = lines.price * lines.quantity;
+            const tr = document.getElementById("tr");
+
+            // Finish from here
+            // Use escape function to help
+
+        }
 
     }
 
     // Function for updating the cart summary
     function cartUpdates() {
 
+        document.getElementById("shippingMethod").addEventListener("change",
+            function (){
+                if (shoppingCartLines.length) {
+                    createShoppingCart();
+                }
+        });
+        document.getElementById("shippingDestination").addEventListener("change",
+            function (){
+                if (shoppingCartLines.length){
+                    createShoppingCart();
+                }
+        });
     }
 
     // Function for checkout
