@@ -75,22 +75,24 @@
         </section>
 
         <!--This area is for the results-->
-        <section id="resultsTab">
+        <section id="resultsTab" class="lg:col-span-3 bg-white border border-gray-300 rounded p-4">
             <!--For CSS use this class name-->
-            <div class="results-tab">
+            <div class="results-tab flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
                 <!--This area is for the sorting box, names, price high to low and low to high-->
-                <label for="sorting">Sort:</label>
+                <div class="flex items-center gap-2">
+                <label for="sorting" class="font-medium text-gray-700">Sort:</label>
                 <!--Options for sorting-->
-                <select id="sorting">
+                <select id="sorting" class="border border-gray-300 rounded px-3 py-2 text-sm bg-white">
                     <option value="names">Product Names (A-Z)</option>
                     <option value="lowPriceSort">Prices (Low-High)</option>
                     <option value="highPriceSort">Prices (High-Low)</option>
                 </select>
             </div>
+            </div>
             <!--Class name is filters activated for CSS, this is for the active filters bar-->
-            <div class="filters-activated" id="activeFilters"></div>
+            <div class="filters-activated flex flex-wrap gap-2 mb-4" id="activeFilters"></div>
             <!--This is for the grid for products to choose from-->
-            <div id="productGrid"></div>
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
         </section>
       </div>
     </article>
@@ -100,38 +102,38 @@
     <!--Used this for some help https://www.w3schools.com/howto/howto_css_breadcrumbs.asp -->
     <div id="productView" class="view" style="display:none;">
         <!--Use these class names to style with CSS, the breadcrumb and product views-->
-        <div class="breadcrumb" id="breadcrumb"></div>
-        <div class="product-view-layout">
+        <div class="breadcrumb text-sm text-gray-600 mb-4" id="breadcrumb"></div>
+        <div class="product-view-layout bg-white border border-gray-300 rounded p-6 gird grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="product-view-images">
-                <div class="product-view-main-image" id="mainImage"></div>
-                <div class="product-extra"></div>
+                <div class="product-view-main-image bg-gray-100 border border-gray-300 rounded min-h-[320px] flex items-center justify-center mb-4" id="mainImage"></div>
+                <div class="product-extra grid grid-cols-2 gap-4"></div>
             </div>
 
         <!--This is the area for the details in the product view page-->
         <div class="product-view-details">
-            <h2 id="productTitle"></h2>
-            <p id="productPrice" class="product-price"></p>
-            <p id="productDescription"></p>
-            <p>Material</p> <span id="productMaterial"></span></p>
+            <h2 id="productTitle" class="text-2xl font-bold text-gray-800 mb-3"></h2>
+            <p id="productPrice" class="product-price text-xl font-semibold text-gray-700 mb-4"></p>
+            <p id="productDescription" class="text-gray-600 leading-7 mb-4"></p>
+            <p class="mb-4"><span class="font-semibold text-gray-800">Material</span> <span id="productMaterial"></span></p>
 
             <!--Area is for Quantity-->
-            <div class="quantity-row">
-                <label for="productQuantity"><strong>Quantity</strong></label>
-                <input type="number" id="productQuantity" min="1" value="1">
+            <div class="quantity-row mb-5">
+                <label for="productQuantity" class="block mb-2 font-semibold text-gray-800"><strong>Quantity</strong></label>
+                <input type="number" id="productQuantity" min="1" value="1" class="w-24 border border-gray-300 rounded px-3 py-2">
             </div>
 
             <!--To make it clear this is for the sizing options-->
-            <div>
-                <div id="productSizes"></div>
+            <div class="mb-5">
+                <div id="productSizes" class="flex flex-wrap gap-2"></div>
             </div>
             
             <!--This area is for the color option boxes-->
-            <div class="product-coloroption-boxes">
-                <div id="productColors"></div>
+            <div class="product-coloroption-boxes mb-6">
+                <div id="productColors" class="flex flex-wrap gap-3"></div>
             </div>
 
             <!--This is the button for adding to the cart-->
-            <button type="button" id="productAddToCart">+ Add to Cart!</button>
+            <button type="button" id="productAddToCart" class="border-gray-200 border border-gray-400 rounded px-4 py-2 font-medium hover:border-gray-300">+ Add to Cart!</button>
 
             </div>
         </div>
