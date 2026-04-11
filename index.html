@@ -163,7 +163,7 @@
                 <table class="table-cart w-full text-sm border-collapse">
                     <thead>
                         <tr class="border-b border-gray-300 text-left">
-                            <th class="py-3 pr-3"></th>
+                            <th class="py-3 pr-3">Remove</th>
                             <th class="py-3 pr-3">Product</th>
                             <th class="py-3 pr-3">Color</th>
                             <th class="py-3 pr-3">Size</th>
@@ -183,7 +183,7 @@
                     <!--This is the options for shipping methods-->
                     <p class="mb-4"><label for="shippingMethod" class="block mb-2 font-medium text-gray-700">Shipping Method</label><br>      
                       <select id="shippingMethod" class="w-full border border-gray-300 rounded px-3 py-2 bg-white">
-                        <option value="Standard">Standard</option>>
+                        <option value="Standard">Standard</option>
                         <option value="Express">Express</option>
                         <option value="Priority">Priority</option>
                       </select>
@@ -988,7 +988,7 @@
             // Looks like a lot but the idea here is simple HTML table elements was created
             // For the Shopping Cart page / view
             tr.innerHTML = '<td><button type="button" class="del-btn" data-line="' + i + '">&minus;</button></td>' +
-            '<td class="img-cell"><span class="mini-ph"></span></td>' + "<td>" + escape(lines.name) + "</td>" +
+            "<td>" + escape(lines.name) + "</td>" +
             '<td><span class="swatch-inline" style="background:' + lines.colorHex + '"></span> ' + escape(lines.colorName) + "</td>" +
             "<td>" + escape(lines.size) + "</td>" + "<td>" + moneyFormat(lines.price) + "</td>" + "<td>" + lines.quantity +
             "</td>" + "<td>" + moneyFormat(subtot) + "</td>";
