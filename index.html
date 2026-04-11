@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Clothing Store - COMP 3512</title>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-beige-50 text-gray-800">
     <div class="min-h-screen flex flex-col">
         <!-- This area is for the headers and navigation bar buttons -->
          <header class="bg-blue-100 border-b border-gray-400">
@@ -31,7 +31,7 @@
     <!--This area is for the home page-->
     <!--I have used class name view active, since this page will update-->
    <div id="viewHome" class="view active" style="display:block;">
-    <div class="bg-white border border-gray-300 p-6 md:p-8 rounded">
+    <div class="border border-gray-300 p-6 md:p-8 rounded bg-cover bg-center bg-no-repeat text-white">
     <h2 class="text-3xl font-bold text-gray-800 mb-4">Clothing Store</h2>
     <p class="store-desc text-gray-600 leading-7 max-w-3xl">
         Welcome to our Clothing Store, we sell
@@ -45,7 +45,7 @@
     <div class="categories-box grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8" id="homepageCatBox"></div>
     <section class="featured-items mt-10">
         <h3 class="text-xl font-semibold text-gray-800 mb-4">Featured Items!</h3>
-        <div class="featured-box-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white border border-gray-300 rounded p-4 shadow-sm hover:underline" id="featuredHome"></div>
+        <div class="featured-box-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white border border-gray-300 rounded p-4 shadow-sm" id="featuredHome"></div>
     </section>
    </div>    
 
