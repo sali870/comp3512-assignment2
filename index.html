@@ -42,7 +42,7 @@
     </div>
 
     <!--Still part of home page but this is to deal with the category boxes for featured items-->
-    <div class="categories-box grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8" id="homepageCatBox"></div>
+    <div class="categories-box bg-white border border-gray-300 rounded px-4 py-3 text-center font-semibold text-gray-700 shadow-sm hover:bg-blue-50 hover:border-blue-300 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8" id="homepageCatBox"></div>
     <section class="featured-items mt-10">
         <h3 class="text-xl font-semibold text-gray-800 mb-4">Featured Items!</h3>
         <div class="featured-box-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white border border-gray-300 rounded p-4 shadow-sm" id="featuredHome"></div>
@@ -75,7 +75,7 @@
         </section>
 
         <!--This area is for the results-->
-        <section id="resultsTab" class="lg:col-span-3 bg-white border border-gray-300 rounded p-4">
+        <section id="resultsTab" class="lg:col-span-3 bg-white border border-gray-300 rounded p-4 h-[700px] overflow-y-auto">
             <!--For CSS use this class name-->
             <div class="results-tab flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
                 <!--This area is for the sorting box, names, price high to low and low to high-->
@@ -90,7 +90,7 @@
             </div>
             </div>
             <!--Class name is filters activated for CSS, this is for the active filters bar-->
-            <div class="filters-activated flex flex-wrap gap-2 mb-4" id="activeFilters"></div>
+            <div class="filters-activated border-gray-50 border border-gray-300 rounded p-3 mb-4 flex flex-wrap gap-2 min-h-[52px]" id="activeFilters"></div>
             <!--This is for the grid for products to choose from-->
             <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
         </section>
