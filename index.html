@@ -26,50 +26,51 @@
             </div>
          </header>
 
-<main>
+<main class="flex-1 max-w-6xl mx-auto w-full px-4 py-6">
 
     <!--This area is for the home page-->
     <!--I have used class name view active, since this page will update-->
    <div id="viewHome" class="view active" style="display:block;">
-    <h2>Clothing Store</h2>
-    <p class="store-desc">
+    <div class="bg-white border border-gray-300 p-6 md:p-8 rounded">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Clothing Store</h2>
+    <p class="store-desc text-gray-600 leading-7 max-w-3xl">
         Welcome to our Clothing Store, we sell
         many different kinds of clothing items for men and women. 
         Please take a look, once done go to the Shopping Cart tab
         to check out!
     </p>
+    </div>
 
     <!--Still part of home page but this is to deal with the category boxes for featured items-->
-    <!--I have named the classes to help with CSS implementation-->
-    <div class="categories-box" id="homepageCatBox"></div>
-    <section class="featured-items">
-        <h3>Featured Items!</h3>
-        <div class="featured-box-row" id="featuredHome"></div>
+    <div class="categories-box grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8" id="homepageCatBox"></div>
+    <section class="featured-items mt-10">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Featured Items!</h3>
+        <div class="featured-box-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="featuredHome"></div>
     </section>
    </div>    
 
    <!--This area is for the browse page-->
    <!--Used article so I could add extra div for the layout of the page-->
     <article id="viewBrowse" class="view" style="display:none;">
-      <div class="layout-browsepage">
+      <div class="layout-browsepage grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!--Using this section id for filters-->
-        <section id="filters">
+        <section id="filters" class="bg-white border border-gray-300 rounded p-4 space-y-6 h-fit">
             <!--Gender filter area-->
             <!--When doing CSS use the class name below for styling-->
             <div class="filter-grouping" id="genderFilter">
-                <h3>Gender</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Gender</h3>
             </div>
             <!--Category filter area-->
             <div class="filter-grouping" id="categoryFilter">
-                <h3>Category</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Category</h3>
             </div>
             <!--Size filter area-->
             <div class="filter-grouping" id="sizeFilter">
-                <h3>Sizes</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Sizes</h3>
             </div>
             <!--Color filter area-->
             <div class="filter-grouping" id="colorsFilter">
-                <h3>Color Choices</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Color Choices</h3>
             </div>
         </section>
 
@@ -228,7 +229,7 @@
             <br>
             <!--Section about technologies-->
             <p>
-                We have used technologies such as HTML, CSS, JavaScript and JSON
+                We have used technologies such as HTML, Tailwind CSS, JavaScript and JSON
             </p>
             <br>
             <!--Section about names-->
